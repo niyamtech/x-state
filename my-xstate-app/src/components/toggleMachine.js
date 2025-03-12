@@ -1,4 +1,3 @@
-// src/toggleMachine.js
 import { createMachine } from "xstate";
 
 export const toggleMachine = createMachine({

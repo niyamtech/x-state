@@ -1,15 +1,14 @@
 // src/components/ToggleButton.js
 import React from "react";
 import { useMachine } from "@xstate/react";
-import { toggleMachine } from "../toggleMachine";
-
+import { toggleMachine } from "./toggleMachine";
 const ToggleButton = () => {
   const [state, send] = useMachine(toggleMachine);
 
   return (
     <button
-      onClick={() => send("TOGGLE")}
-      style={{
+    onClick={() => send({ type: "TOGGLE" })}  // Send event object with a 'type' property
+    style={{
         padding: "10px 20px",
         backgroundColor: state.matches("active") ? "green" : "gray",
         color: "white",
